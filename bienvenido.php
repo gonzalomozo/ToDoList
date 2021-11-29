@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 
 session_start();
 if(!isset($_SESSION['usuario'])){
@@ -11,7 +11,7 @@ if(!isset($_SESSION['usuario'])){
     session_destroy(); 
     die();
 }
-?> -->
+?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +36,8 @@ if(!isset($_SESSION['usuario'])){
 	
 
     <link rel="stylesheet" href="assets/css/estiloBienvenida.css">
-</head>
+    
+  </head>
 <body> 
     <!--<a href="php/cerrar_sesion.php"> cerrar sesion</a>-->
     
@@ -62,13 +63,13 @@ if(!isset($_SESSION['usuario'])){
             <a href="index.html" class="brand-logo" id="pepa">ToDoList GZ<span>&#160;</span></a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger btn-floating pulse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="index.html" id="pepa">Inicio</a></li>
+            <!--<li><a href="index.html" id="pepa">Inicio</a></li>
             <li><a href="sass.html" id="pepa"><img src="I.png" id="ioi"></a></li>
-            <li><a href="https://www.facebook.com/Munayki-Qosqo-963471254044223" ><img src="f.png" id="ioi"></a></li>
+            <li><a href="https://www.facebook.com/Munayki-Qosqo-963471254044223" ><img src="f.png" id="ioi"></a></li>-->
             <li><a href="php/cerrar_sesion.php" id="pepa">Cerrar sesion</a></li>
             <!-- Dropdown Trigger -->
-            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1" id="pepa">Inicia Sesion<i class="material-icons right">arrow_drop_down</i></a></li>
-          </ul>
+           <!-- <li><a class="dropdown-trigger" href="#!" data-target="dropdown1" id="pepa">Inicia Sesion<i class="material-icons right">arrow_drop_down</i></a></li>
+         --> </ul>
         </div>
         </nav>
         
@@ -92,71 +93,46 @@ if(!isset($_SESSION['usuario'])){
     <h1 class="title">Cosas que hacer</h1>
     <div class="all-tasks">
     <h2 class="task-list-title">Crea tu lista Usuario:</h2>
-    <ul class="task-list">
-    <li class="list-name active-list">Youtube</li>  
-    <li class="list-name">Trabajo</li>
-    <li class="list-name">Compras</li>  
-    </ul>
-    <form action="">
-        <input type="text" class="new list" placeholder="Lista nueva" aria-label="new list name">
+    <ul class="task-list" data-lists></ul>
+    <form action="" data-new-list-form>
+
+        <input type="text" class="new list" data-new-list-input  placeholder="Lista nueva" aria-label="new list name">
     <button class="btn create" aria-label="create new list">+</button>
     </form>
     </div>
 
-    <div class="todo-list" >
+    <div class="todo-list"  data-list-display-container>
       <div class="todo-header">
-       <h2 class="list-title">Youtube</h2>   
-       <p class="task-count">3 tareas restantes</p>
+       <h2 class="list-title" data-list-title>Todo List</h2>   
+       <p class="task-count" data-list-count> Tareas restantes</p>
       </div>  
       <div class="todo-body">
           <!--tarea 1-->
-          <div class="tasks">
-              <div class="task">
-              <input type="checkbox" id="task-1"> 
-              <label for="task-1">
-                  <spam class="custom-checkbox">                     
-                  </spam>
-            grabar video de ToDo List
-              </label>
-              </div>
-            
-            <!--tarea 2-->
-            
-                <div class="task">
-                <input type="checkbox" id="task-2"> 
-                <label for="task-2">
-                    <spam class="custom-checkbox">                     
-                    </spam>
-              anotar tarea
-                </label>
-                </div>
-              
-              <!--tarea 3-->
-            
-                <div class="task">
-                <input type="checkbox" id="task-3"> 
-                <label for="task-3">
-                    <spam class="custom-checkbox">                     
-                    </spam>
-              acabar proyecto
-                </label>
-                </div>
-              </div>
+          <div class="tasks" data-tasks> </div>
            <div class="new-task-creator">
-            <form action="">
-                <input type="text" class="new task" placeholder="Nuevo nombre de tarea" aria-label="new task name">
+            <form action="" data-new-task-form>
+                <input type="text" data-new-task-input class="new task" placeholder="Nuevo nombre de tarea" aria-label="new task name">
             <button class="btn create" aria-label="create new task">+</button>
             </form>
            </div>
            <div class="delete-stuff">
-               <button class="btn delete">Borrar tareas completadas</button>
-               <button class="btn delete">Eliminar lista</button>
+               <button class="btn delete" data-clear-complete-tasks-button>Borrar tareas completadas</button>
+               <button class="btn delete" data-delete-list-button>Eliminar lista</button>
            </div>
           
       </div>
 
     </div>
     
+
+    <template id="task-template">
+      <div class="task">
+        <input type="checkbox"> 
+        <label >
+            <spam class="custom-checkbox"></spam>                               
+        </label>
+        </div>
+    </template>
     <!--script de materialize-->
     <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
 	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
@@ -176,5 +152,6 @@ if(!isset($_SESSION['usuario'])){
   
     <script src="assets/js/materialize.js"> </script>
     <script src="assets/js/Init.js"> </script>
+    <script defer src="assets/js/scriptTD.js"> </script>
 </body>
 </html>
