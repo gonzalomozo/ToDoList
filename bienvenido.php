@@ -26,7 +26,7 @@ if(!isset($_SESSION['usuario'])){
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet"> 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
-	
+
        
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> 
 	  
@@ -36,11 +36,11 @@ if(!isset($_SESSION['usuario'])){
 	
 
     <link rel="stylesheet" href="assets/css/estiloBienvenida.css">
-    
+
   </head>
 <body> 
     <!--<a href="php/cerrar_sesion.php"> cerrar sesion</a>-->
-    
+
     
     <!--menu de navegador-->
    
@@ -53,20 +53,23 @@ if(!isset($_SESSION['usuario'])){
         </div></div>
       </ul>
       <ul id="dropdown2" class="dropdown-content">
-        <li><a href="rompe.html">Promoción1</a></li>
+        <li><a href="rompe.html">------</a></li>
         <li><a href="#!"></a></li>
         <li class="divider"></li>
         <li><a href="#!"></a></li>
       </ul>
       <nav id=menu>
         <div class="nav-wrapper">
-            <a href="index.html" class="brand-logo" id="pepa">ToDoList GZ<span>&#160;</span></a>
+            <a href="index.html" class="brand-logo" id="pepa">ToDoList <span>&#160;</span></a>
+           
           <a href="#" data-target="mobile-demo" class="sidenav-trigger btn-floating pulse"><i class="material-icons">menu</i></a>
+          
           <ul class="right hide-on-med-and-down">
             <!--<li><a href="index.html" id="pepa">Inicio</a></li>
             <li><a href="sass.html" id="pepa"><img src="I.png" id="ioi"></a></li>
             <li><a href="https://www.facebook.com/Munayki-Qosqo-963471254044223" ><img src="f.png" id="ioi"></a></li>-->
-            <li><a href="php/cerrar_sesion.php" id="pepa">Cerrar sesion</a></li>
+            
+             <li><a href="php/cerrar_sesion.php" id="pepa"><i class=" large material-icons">exit_to_app CERRAR SESION</i> </a></li>
             <!-- Dropdown Trigger -->
            <!-- <li><a class="dropdown-trigger" href="#!" data-target="dropdown1" id="pepa">Inicia Sesion<i class="material-icons right">arrow_drop_down</i></a></li>
          --> </ul>
@@ -74,11 +77,8 @@ if(!isset($_SESSION['usuario'])){
         </nav>
         
         <ul class="sidenav" id="mobile-demo">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="sass.html"><img src="I.png" id="ioi"></a></li>
-            <li><a href="https://www.facebook.com/Munayki-Qosqo-963471254044223"><img src="f.png" id="ioi"></a></li>
-        <li><a href="./htmlProducto/molde.html">Productos</a></li>
-        <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Promocionws<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a href="php/cerrar_sesion.php" id="pepa"><i class=" large material-icons" id=uu>exit_to_app CERRAR SESION</i></a></li>
+        
         </ul>
         <br>
         <br>
@@ -88,11 +88,21 @@ if(!isset($_SESSION['usuario'])){
         <br>
         
   
-    
     <!--todo list-->
-    <h1 class="title">Cosas que hacer</h1>
+    
+    <h1 class="title"> <div class="container__cover">
+      <div class="cover">          
+
+          <div class="svg">
+              <img src="assets/images/developer_activity.svg" alt="">
+          </div>
+      </div>
+  </div> Cosas que hacer </h1>
+    
     <div class="all-tasks">
+      
     <h2 class="task-list-title">Crea tu lista Usuario:</h2>
+    
     <ul class="task-list" data-lists></ul>
     <form action="" data-new-list-form>
 
@@ -102,10 +112,12 @@ if(!isset($_SESSION['usuario'])){
     </div>
 
     <div class="todo-list"  data-list-display-container>
+      
       <div class="todo-header">
        <h2 class="list-title" data-list-title>Todo List</h2>   
        <p class="task-count" data-list-count> Tareas restantes</p>
       </div>  
+      
       <div class="todo-body">
           <!--tarea 1-->
           <div class="tasks" data-tasks> </div>
@@ -119,11 +131,13 @@ if(!isset($_SESSION['usuario'])){
                <button class="btn delete" data-clear-complete-tasks-button>Borrar tareas completadas</button>
                <button class="btn delete" data-delete-list-button>Eliminar lista</button>
            </div>
-          
+         
       </div>
+ 
+   
+</div>
 
-    </div>
-    
+      
 
     <template id="task-template">
       <div class="task">

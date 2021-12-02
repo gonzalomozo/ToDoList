@@ -151,5 +151,5 @@ while (element.firstChild){
     element.removeChild(element.firstChild)
 }
 }
-
- render()
+render()
+ 
